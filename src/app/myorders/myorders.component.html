@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="ibox">
+            <div class="ibox-title">
+              <span class="pull-right">(<strong>{{ orders.length }}</strong>) orders</span>
+              <h5>Order History</h5>
+            </div>
+            <div class="ibox-content">
+              <div class="table-responsive">
+                <table class="table shoping-cart-table">
+                  <tbody>
+                    <tr *ngFor="let order of orders">
+                      <td class="desc">
+                        <h3>
+                          <a href="#" class="text-navy">Order {{order.orderid }} </a>
+                        </h3>
+                        <p class="small">Placed on: {{ order.orderdate}}</p>
+                        <p class="small">Items: {{ order.productCart.length }}</p>
+                        <div class="m-t-sm">
+                          <a class="text-muted"><i class="fa fa-eye"></i> View Details</a>
+                        </div>
+                      </td>
+                      <td>
+                        <span>Status:</span>
+                        <h4>Good </h4>
+                      </td>
+                      <td>
+                        <span>Total:</span>
+                        <h4>{{ calculateTotal(order) }}</h4>
+                      </td>
+                      <td width="150">
+                        <button class="btn btn-primary btn-sm" style="background-color: #b8fc04; border-width: 0px; border-radius: 6px;">
+                          <i class="fa fa-truck"></i> Track Order
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <!-- Orders Pagination (optional) -->
+            <div class="ibox-content">
+              <button class="btn btn-white" ><i class="fa fa-arrow-left"></i> Previous </button>
+              <button class="btn btn-white pull-right" > Next <i class="fa fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Orders Summary -->
+        <div class="col-md-3">
+          <div class="ibox">
+            <div class="ibox-title">
+              <h5>Summary</h5>
+            </div>
+            <div class="ibox-content">
+              <span>Total Orders:</span>
+              <h2 class="font-bold">{{ orders.length }}</h2>
+              <hr>
+              <span class="text-muted small"> Review your order history </span>
+              <div class="m-t-sm">
+                <div class="btn-group">
+                  <button class="btn btn-primary btn-sm" style="background-color: #b8fc04; border-width: 0px; border-radius: 6px;"><i class="fa fa-list"></i> View All Orders</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ok" style="height: 30vh;">
+
+
+  </div>
+
+  <app-footer> </app-footer>
+  

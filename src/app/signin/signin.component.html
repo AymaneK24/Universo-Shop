@@ -1,0 +1,47 @@
+<div class="amazon-logo">
+    <img src="unv.png" alt="Universo Logo">
+</div>
+  
+  <div class="sign-in-container">
+    <h2>Sign in</h2>
+  
+    <form>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" required [(ngModel)]="email">
+      <label for="email">Password </label>
+      <input type="password" id="password" name="password" required  [(ngModel)]="password" >
+
+      <button type="submit" (click)="Connexion()">Continue</button>
+    </form>
+  
+    <p>By continuing, you agree to Universo's 
+      <a href="#">Conditions of Use & Sale</a>. 
+      Please see our 
+      <a href="#">Privacy Notice</a>, 
+      our <a href="#">Cookies Notice</a>.
+    </p>
+  
+    <p><a href="#">Forget password ?</a></p>
+  
+    
+
+    <button routerLink="/signup" routerLinkActive="active" >Create your Universo account</button>
+  </div>
+  <div class="okk" style="height: 1vh"></div>
+
+ <div class="new">
+
+  <p>New to Universo?</p>
+
+ </div>
+
+ <div class="okk" style="height: 0.1vh"></div>
+  
+
+   
+  <div class="sign-in-container" id="okk">
+   <a routerLink="/signup" routerLinkActive="active">  Create your account ? </a>
+  </div>
+
+  <div class="okk" style="height: 10vh"></div>
+  

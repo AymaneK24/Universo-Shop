@@ -1,0 +1,153 @@
+/* Container styling */
+.sign-in-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px  #000000;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #ffffff;
+    position: relative;
+}
+
+/* Centering the logo */
+.amazon-logo {
+    margin-bottom: 20px;
+    text-align: center; /* Center the logo */
+}
+
+.amazon-logo img {
+    width: 140px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.amazon-logo img:hover {
+    opacity: 1;
+}
+
+/* Form styling */
+form {
+    margin-bottom: 16px;
+    pad: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px; /* Reduced spacing */
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000;
+    text-align: left;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px; /* Reduced spacing */
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  
+}
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px; /* Reduced spacing */
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+  
+}
+
+/* Button styling */
+button {
+    padding: 12px 25px;
+    background-color:#b8fc04;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+button:active {
+    background-color: #000000;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Links and Text */
+p {
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Special buttons for additional actions */
+.sign-in-container button:last-child {
+    background-color:#b8fc04
+}
+
+.sign-in-container button:last-child:hover {
+    background-color:#b8fc04;
+}
+
+.sign-in-container button:last-child:active {
+    background-color:#b8fc04;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    .sign-in-container {
+        padding: 20px;
+    }
+
+    .amazon-logo img {
+        width: 120px;
+    }
+
+    button {
+        padding: 11px 2px;
+        font-size: 13px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+
+.new{
+    text-align: center;
+}
+
+.sign-in-container a{
+    color: #000;
+}

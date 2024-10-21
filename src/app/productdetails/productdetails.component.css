@@ -1,0 +1,142 @@
+body {
+  margin-top: 20px;
+  background: #eee;
+}
+
+.text-navy {
+  color: #1ab394;
+}
+
+.product-details-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  max-width: 900px;
+  border: 1px solid #ddd;
+}
+
+.product-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  display: block;
+}
+
+.product-info {
+  flex: 2;
+  padding: 20px;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.product-category {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.product-discount {
+  font-size: 18px;
+  color: #031a0c;
+  margin-bottom: 10px;
+}
+
+.product-rating .fa-star,
+.product-rating .fa-star-o {
+  color: #ffffff;
+}
+
+.product-rating .fa-star {
+  color: #74ff2e;
+}
+
+.product-brand {
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.product-tags {
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.product-tag {
+  background-color: #000000;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.product-stock {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.product-stock.out-of-stock {
+  color: #e74c3c;
+}
+
+.btn-add-to-cart {
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add-to-cart:disabled {
+  background-color: #ffffff;
+  cursor: not-allowed;
+}
+
+.btn-add-to-cart:hover:not(:disabled) {
+  background-color: #5eff00;
+}
+
+.cc{
+  margin-top: 0;
+  background: transparent;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+

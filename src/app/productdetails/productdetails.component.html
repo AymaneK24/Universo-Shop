@@ -1,0 +1,61 @@
+<div class="cc">
+  
+  <div class="product-details-container">
+    <!-- Product Image Section -->
+    <div class="product-image">
+      <img [src]="product.images[0]" alt="{{ product.title }}" />
+    </div>
+
+    <!-- Product Information Section -->
+    <div class="product-info">
+      <h1 class="product-title">{{ product.title }}</h1>
+      <p class="product-sku">SKU: {{ product.sku }}</p>
+      <p class="product-category text-navy">Category: {{ product.category }}</p>
+      <p class="product-description">{{ product.description }}</p>
+
+      <p class="product-price">Price: ${{ product.price.toFixed(2) }}</p>
+      <p class="product-discount">Discount: {{ product.discountPercentage }}%</p>
+
+      <!-- Product Rating -->
+      <p class="product-rating">
+        Rating:
+        <i class="fa" *ngFor="let star of [1,2,3,4,5]" 
+           [ngClass]="{'fa-star': star <= product.rating, 'fa-star-o': star > product.rating}"></i>
+      </p>
+
+      <p class="product-brand">Brand: {{ product.brand }}</p>
+
+      
+
+
+      <p class="product-tags">
+        Tags:
+        <span *ngFor="let tag of product.tags" class="product-tag">{{ tag }}</span>
+      </p>
+
+      <!-- Stock Availability -->
+      <p class="product-stock" [ngClass]="{ 'out-of-stock': product.stock === 0 }">
+        Stock: {{ product.stock }} {{ product.stock > 0 ? 'Available' : 'Out of stock' }}
+      </p>
+
+      <!-- Product Dimensions -->
+      <p>Width: {{product.dimensions.width}} cm</p>
+      <p>Height: {{product.dimensions.height}} cm</p>
+      <p>Depth: {{product.dimensions.depth}} cm</p>
+
+      <!-- Product Weight -->
+      <p>Weight: {{product.weight}} Kg</p>
+
+      <!-- Return Policy -->
+      <p class="product-return-policy">
+        Return Policy: {{ product.returnPolicy }}
+      </p>
+
+      <!-- Add to Cart Button -->
+      <button class="btn-add-to-cart" [disabled]="product.stock === 0" (click)="addToCart()">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+
+</div>

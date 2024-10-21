@@ -1,0 +1,57 @@
+/* styles.css */
+
+.navbar-brand {
+    font-weight: bold;
+    color: #000;
+}
+
+.navbar-nav li a {
+    color: #030000;
+}
+
+.navbar-nav li a:hover {
+    color: #61c206;
+}
+
+
+.navbar-nav ms-auto li a {
+    color: #fff;
+}
+
+.navbar-nav ms-auto li a:hover {
+    color: #73ff00;
+}
+
+.categories-dropdown {
+    margin-right: 0;
+  
+    .dropdown-select {
+      appearance: y ;
+      border: 1px solid #ced4da;  
+      padding: 0.5rem 1rem;
+      font-size: 16px;
+      background-color: #ffffff; 
+      color: #495057;  
+      border-radius: 8px; 
+      width: 120px;  
+  
+      &:focus {
+        border-color: #0a2645; 
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); 
+      }
+    }
+  }
+  
+.form-control:focus{
+  
+    outline: none; /* Remove default outline */
+    transition: all 0.4s ease-in-out;
+
+  }
+
+.form-control{
+  width: 500px;
+
+
+}  

@@ -1,0 +1,24 @@
+
+<div class="product-card">
+      <img [src]=product.images[0]  class="card-img-top" (click)="goToProductDetails(product.id)" > 
+
+    <div class="card-body">
+     
+      <h5 class="card-title"   > <a (click)="goToProductDetails(product.id)"> {{ product.title}} </a> </h5>
+      <p class="card-text">Price: {{ product.price }} USD</p>
+      <p class="card-text">{{ product.description}}</p>
+    </div>
+
+    <div class="card-footer">
+
+      <div *ngIf="product.stock > 0">
+        <button  class="btn btn-primary" (click)="AddtoCart()" >Ajouter au panier</button>
+      </div>
+
+      <div *ngIf="product.stock == 0">
+        Non Disponible
+      </div>
+      
+    </div>
+
+  </div>

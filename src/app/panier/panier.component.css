@@ -1,0 +1,128 @@
+
+
+body{margin-top:20px;
+  background:#eee;
+}
+h3 {
+  font-size: 16px;
+}
+.text-navy {
+  color: #1ab394;
+}
+.cart-product-imitation {
+text-align: center;
+padding-top: 30px;
+height: 80px;
+width: 80px;
+background-color: #f8f8f9;
+}
+.cart-product-imitation img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain; /* Ensures the image doesn't stretch or overflow */
+  display: block;
+}
+
+.product-imitation.xl {
+padding: 120px 0;
+}
+.product-desc {
+padding: 20px;
+position: relative;
+}
+.ecommerce .tag-list {
+padding: 0;
+}
+.ecommerce .fa-star {
+color: #d1dade;
+}
+.ecommerce .fa-star.active {
+color: #f8ac59;
+}
+.ecommerce .note-editor {
+border: 1px solid #e7eaec;
+}
+table.shoping-cart-table {
+margin-bottom: 0;
+}
+table.shoping-cart-table tr td {
+border: none;
+text-align: right;
+}
+table.shoping-cart-table tr td.desc,
+table.shoping-cart-table tr td:first-child {
+text-align: left;
+}
+table.shoping-cart-table tr td:last-child {
+width: 80px;
+}
+.ibox {
+clear: both;
+margin-bottom: 25px;
+margin-top: 0;
+padding: 0;
+}
+.ibox.collapsed .ibox-content {
+display: none;
+}
+.ibox:after,
+.ibox:before {
+display: table;
+}
+.ibox-title {
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+-moz-border-right-colors: none;
+-moz-border-top-colors: none;
+background-color: #ffffff;
+border-color: #e7eaec;
+border-image: none;
+border-style: solid solid none;
+border-width: 3px 0 0;
+color: inherit;
+margin-bottom: 0;
+padding: 14px 15px 7px;
+min-height: 48px;
+}
+
+
+.empty-cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* Full viewport height */
+  text-align: center;
+  color: #333;
+}
+
+.empty-cart-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000000; /* Green theme color */
+}
+
+.empty-cart-container i {
+  font-size: 5rem;
+  color: #000000; /* Bright icon color */
+  margin-bottom: 20px;
+}
+
+.continueShopping {
+  margin-top: 20px;
+}
+
+.continueShopping button {
+  background-color: #000000; /* Green theme */
+  border-width: 0px;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.continueShopping button:hover {
+  background-color: #5eff00; /* Darker green on hover */
+}

@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark ">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/" routerLinkActive="active" >
+            <img src="unv.png"
+       alt="Universe Logo" height="120"   > UNIVERSO
+          </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/" routerLinkActive="active" >Home</a>
+                </li>
+            
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Prime</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Deals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Customer Service</a>
+                </li>
+            </ul>
+
+            <div class="d-flex gap-2" role="searchbox">
+
+
+                <div class="categories-dropdown">
+                    <select class="dropdown-select" [(ngModel)]="selectedCategory" (ngModelChange)="onCategoryChange()" >
+                      <option value=""  >All</option>
+                      <option *ngFor="let category of categories" [value]="category">
+                        {{ category }}
+                      </option>
+                    </select>
+                </div>
+                  
+
+                <div class="d-flex" role="search" >
+
+                    <input class="dd form-control me-2" type="search" placeholder="Search" aria-label="Search"  (ngModelChange)="onSearch($event)"  [(ngModel)]="searchKey"  >
+                    <button class="btn btn-outline" type="submit"> <i class="panier fa-sharp fa-solid fa-magnifying-glass"> </i> </button>
+                    
+                </div>
+            </div>
+           
+            <ul class="navbar-nav  mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                   
+                    <a class="nav-link"  (click)="deconnexion()" *ngIf="false" > Deconnexion </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" > Account </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/orders" routerLinkActive="active">Orders</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"  routerLink="/panier"  routerLinkActive="active">  <i class="fa-solid fa-cart-shopping"></i>  </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

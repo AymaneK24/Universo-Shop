@@ -1,0 +1,101 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+<div class="empty-cart-container" *ngIf="productCart.length == 0">
+  <h2>Your UNIVERSO Cart is Empty</h2>
+  <div>
+    <i class="fa-solid fa-cart-shopping"></i>
+  </div>
+  <div class="continueShopping"> 
+     <button class="btn btn-primary" (click)="continueShopping()">Shop now</button>
+  </div>
+</div>
+
+
+<div class="container" *ngIf="productCart.length>0">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="ibox">
+          <div class="ibox-title">
+            <span class="pull-right">(<strong>{{ productCart.length }}</strong>) item </span>
+            <h5>Items in your cart</h5>
+          </div>
+          <div class="ibox-content">
+            <div class="table-responsive">
+              <table class="table shoping-cart-table">
+                <tbody>
+                  <tr *ngFor="let item of productCart">
+                    <td width="90">
+                      <div class="cart-product-imitation">
+                        <img [src]="item.produit.images[0]" alt="{{ item.produit.title }}">
+                      </div>
+                    </td>
+                    
+                    <td class="desc">
+                      <h3>
+                        <a href="#" class="text-navy">{{ item.produit.title }}</a>
+                      </h3>
+                      <p class="small">{{ item.produit.description }}</p>
+                    
+                      <div class="m-t-sm">
+                 
+                        <a class="text-muted" (click)="deleteProduct(item.produit)"><i class="fa fa-trash"></i> Remove item</a>
+                      </div>
+                    </td>
+                    <td>
+                      {{ item.produit.price}}
+                      <s class="small text-muted">{{ item.produit.price - 10}}</s>
+                    </td>
+                    <td width="65">
+                      <input type="number" class="form-control" [(ngModel)]="item.qte" min="1">
+                    </td>
+                    <td>
+                      <h4>{{ item.produit.price * item.qte }}</h4>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Cart Summary and Buttons -->
+          <div class="ibox-content">
+            <button class="btn btn-primary pull-right" (click)="Acheter()"  style="background-color: #b8fc04; border-width: 0px; border-radius: 6px;" ><i class="fa fa fa-shopping-cart"></i> Acheter </button>
+            <button class="btn btn-white" (click)="continueShopping()"><i class="fa fa-arrow-left"></i> Continue l'achat </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="col-md-3">
+        <div class="ibox">
+          <div class="ibox-title">
+            <h5>Cart Summary</h5>
+          </div>
+          <div class="ibox-content">
+            <span>Total</span>
+            <h2 class="font-bold">{{ calculateTotal() }}</h2>
+            <hr>
+            <span class="text-muted small"> light weight baby</span>
+            <div class="m-t-sm">
+              <div class="btn-group">
+                <button class="btn btn-primary btn-sm" style="background-color: #b8fc04; border-width: 0px; border-radius: 6px;" (click)="Acheter()"><i class="fa fa-shopping-cart"></i>Acheter </button>
+                <button class="btn btn-white btn-sm" (click)="cancel()"><i class="fa fa-times"></i> Cancel </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+ 
+
+
+
+  
+<app-footer></app-footer>
