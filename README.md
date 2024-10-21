@@ -29,3 +29,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 The home page :
 
 ![Capture d'écran 2024-10-21 135446](https://github.com/user-attachments/assets/d5afa120-a97e-4335-98a4-b33541d15a54)
+
+![Capture d'écran 2024-10-21 135500](https://github.com/user-attachments/assets/28fe7055-03a3-42a0-b1c5-a6f9eb40d0ba)
+
+
+The Products page : 
+
+![Capture d'écran 2024-10-21 135511](https://github.com/user-attachments/assets/5607ab65-9abf-48f6-8441-1e6588be1142)
+
+search by Category :
+
+
+
+
+
+
+
+
