@@ -8,6 +8,8 @@ export class AuthService {
   email = 'aymanekenbouch@gmail.com';
   password = '123456';
 
+
+
   constructor() {}
 
   setToConnected() {
@@ -16,5 +18,8 @@ export class AuthService {
 
   setToDeconnected() {
     this.isAuth = false;
+  }
+  getToken(){
+
   }
 }

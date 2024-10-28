@@ -40,7 +40,7 @@ constructor(private productService : ProductService,
 
     this.productService.getCategoriesOfProducts().subscribe((res : any) => {
       this.categories=res;
-      this.connexionbutton = this.auth.isAuth;
+      this.connexionbutton = true;
       
     }
     
