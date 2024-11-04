@@ -8,6 +8,7 @@ import { NgFor, NgIf} from '@angular/common';
 import { Router } from '@angular/router';
 import { FooterComponent } from "../footer/footer.component";
 import { OrdersService } from '../Sevices/orders.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-panier',
@@ -21,7 +22,7 @@ export class PanierComponent {
 
   productCart: Panieritem[] = [];
 
-  constructor(private panier : PanierService,private route : Router,private orderservice : OrdersService){}
+  constructor(private panier : PanierService,private route : Router,private orderservice : OrdersService,private auth : AuthService){}
 
   ngOnInit(): void {
 
@@ -56,9 +57,19 @@ export class PanierComponent {
   Acheter() {
 
     this.orderservice.addOrderToOrders(this.productCart);
-    this.productCart = [];
-    this.panier.removeAllProducts();
-    alert("Go to my orders to see your order")
+   
+    
+    if(this.auth.isAuth){
+      this.route.navigateByUrl('/orders');
+      this.productCart = [];
+      this.panier.removeAllProducts();
+    }
+    else{
+      alert("Vous devez d'abord etre connecté");
+      this.route.navigateByUrl('/signin');
+
+    }
+    
 
   }
 

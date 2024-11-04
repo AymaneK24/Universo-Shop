@@ -3,15 +3,20 @@
 </div>
   
   <div class="sign-in-container">
+    @if(errorMessage){
+      <div> {{errorMessage}} </div>}
     <h2>Sign in</h2>
   
-    <form>
-      <label for="email">Email </label>
-      <input type="text" id="email" name="email" required [(ngModel)]="email">
-      <label for="email">Password </label>
-      <input type="password" id="password" name="password" required  [(ngModel)]="password" >
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-      <button type="submit" (click)="Connexion()">Continue</button>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" formControlName="email" required  >
+
+      <label for="email">Password </label>
+      <input type="password" id="password" name="password"  formControlName="password" required  >
+
+      <button type="submit">Continue</button>
+
     </form>
   
     <p>By continuing, you agree to Universo's 

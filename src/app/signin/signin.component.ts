@@ -1,40 +1,52 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+
+import { Router , RouterModule } from '@angular/router';
 import { AuthService } from '../auth.service';
+
+import { FormsModule } from '@angular/forms';
+
+
+
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [RouterModule,CommonModule,FormsModule],
+  imports: [ReactiveFormsModule,RouterModule,FormsModule],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.css'
 })
-export class SigninComponent implements OnInit{
+
+export class SigninComponent {
   
-  email = '';
-  password = '';
+  fb = inject(FormBuilder);
+  http = inject(HttpClient);
+  router = inject(Router);
+  authService = inject(AuthService);
 
-  constructor(private auth: AuthService, private router: Router) {}
+  errorMessage: string | null = null ;
 
-  ngOnInit(): void {}
 
-  Connexion() {
+  form = this.fb.nonNullable.group({
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+  });
 
-    const em = this.auth.email;
-    const pas = this.auth.password;
 
-    if (this.email && this.password) {
-      if (this.email === em && this.password === pas) {
-        this.auth.setToConnected();
-       
-      } else {
-        alert('Invalid credentials');
-      }
-    } else {
-      alert('Please enter email and password');
-    }
+  onSubmit(): void {
+    const rawForm = this.form.getRawValue();
+    this.authService.login(rawForm.email,rawForm.password).subscribe({
+      next : ()=>{
+         this.router.navigateByUrl('/'); 
+        },
+      error : (err)=> {
+        this.errorMessage = err.code;
+       }
+    
+    })
   }
+
+
 
 }

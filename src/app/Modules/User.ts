@@ -1,7 +1,6 @@
-export class User{
-    userName !: string;
-    userEmail !: string ;
-
-
-     
+export interface User{
+    email : string;
+    username : string ;
+ 
 }
+

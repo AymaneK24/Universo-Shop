@@ -1,10 +1,11 @@
 import {  NgFor, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject } from '@angular/core';
 import { ProductService } from '../Sevices/product.service';
 import { FormsModule } from '@angular/forms';
 import { SearchService } from '../Sevices/search.service';
 import { Router , RouterModule} from '@angular/router';
 import { AuthService } from '../auth.service';
+import { User } from '../Modules/User';
 
 
 @Component({
@@ -18,33 +19,38 @@ export class NavbarComponent implements OnInit{
 
 selectedCategory : string = '';
 searchKey : string = '';
-
 categories :String[] = [];
 
-connexionbutton = false ;
-email = '';
-password = '';
+constructor(private productService : ProductService, private searchService : SearchService, private router :Router){
 
-
-
-constructor(private productService : ProductService,
-            private searchService : SearchService,
-            private router :Router,
-            private auth : AuthService
-){ } 
-
-
- 
+ } 
+authService = inject(AuthService);
 
   ngOnInit(): void {
 
     this.productService.getCategoriesOfProducts().subscribe((res : any) => {
       this.categories=res;
-      this.connexionbutton = true;
-      
-    }
+     })
+
+    this.authService.user$.subscribe( (user : any) => {
+      if(user){
+        
     
-  )}
+        this.authService.currentUserSig.set({
+          email : user.email!,
+          username : user.displayName!
+        });
+      } else {
+        this.authService.currentUserSig.set(null);
+      }
+      console.log(this.authService.currentUserSig());
+     }
+    )
+
+    
+    
+    
+    }
 
 
   onSearch(term: string) {
@@ -58,28 +64,17 @@ constructor(private productService : ProductService,
     this.router.navigate(['/products']); // Set the selected category in the service
   }
 
-  Connexion() {
-    const em = this.auth.email;
-    const pas = this.auth.password;
+  logout() {
+    this.authService.logout();
+  }
 
-    if (this.email && this.password) {
-      if (this.email === em && this.password === pas) {
-        this.auth.setToConnected();
-        this.connexionbutton = true; // Set to true after successful login
-        this.router.navigate(['/home']);
-      } else {
-        console.log('Invalid credentials');
-      }
-    } else {
-      console.log('Please enter email and password');
+  login() {
+    this.router.navigateByUrl('signin');
     }
-  }
+    
 
-  deconnexion() {
-    this.auth.setToDeconnected();
-    this.connexionbutton = false; // Set to false after logout
-   
-  }
+
+  
 
 
     

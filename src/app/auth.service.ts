@@ -1,25 +1,55 @@
-import { Injectable } from '@angular/core';
+import {inject, Injectable, signal } from '@angular/core';
+import { Auth, createUserWithEmailAndPassword, updateProfile , signInWithEmailAndPassword, user, signOut } from '@angular/fire/auth';
+
+
+import { Observable,from } from 'rxjs';
+import { User } from './Modules/User';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  isAuth = false;
-  email = 'aymanekenbouch@gmail.com';
-  password = '123456';
 
+  firebaseauth = inject(Auth);
+  user$ = user(this.firebaseauth);
 
+  currentUserSig = signal<User | null | undefined>(undefined);
 
-  constructor() {}
+  isAuth = true ;
 
-  setToConnected() {
-    this.isAuth = true;
+  register(email : string, username : string , password : string) :Observable<void>{
+    const promis = createUserWithEmailAndPassword(
+      this.firebaseauth,
+      email,
+      password
+    ).then(response => updateProfile(response.user,{displayName : username}))
+
+    return from(promis);
+
   }
 
-  setToDeconnected() {
-    this.isAuth = false;
+  login(email : string, password : string  ) : Observable <void> {
+    const promis = signInWithEmailAndPassword(this.firebaseauth,
+       email,
+        password).then(()=>{});
+    return from(promis);
   }
-  getToken(){
+
+  logout():Observable<void>{
+    const promise = signOut(this.firebaseauth);
+    return from(promise);
+
 
   }
+
+
+
+
+
+
+
+
+
+
 }
