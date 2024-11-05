@@ -6,6 +6,7 @@ import { Panieritem } from '../Modules/PanierItem';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PanierService {
   private productCartSubject = new BehaviorSubject<Panieritem[]>([]);
 
@@ -62,12 +63,11 @@ export class PanierService {
 
   removeAllProducts() {
     let currentCart = this.productCartSubject.getValue();
-    
     currentCart.forEach(item => {
       this.removeProductFromCart(item.produit);
     });
   
-    // Optionally, you could also clear the cart entirely at once, like so:
+    
     // this.productCartSubject.next([]); // Clears the cart
   }
   

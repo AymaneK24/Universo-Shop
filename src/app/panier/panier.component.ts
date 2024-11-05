@@ -1,4 +1,4 @@
-import { Order } from './../Modules/Order';
+
 import { FormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Panieritem } from '../Modules/PanierItem';
@@ -22,10 +22,9 @@ export class PanierComponent {
 
   productCart: Panieritem[] = [];
 
-  constructor(private panier : PanierService,private route : Router,private orderservice : OrdersService,private auth : AuthService){}
+  constructor(private panier : PanierService,private route : Router,private orderservice : OrdersService,private authService : AuthService){}
 
   ngOnInit(): void {
-
     this.panier.getAllCartProducts().subscribe(data => {
       this.productCart = data; 
     });
@@ -54,18 +53,27 @@ export class PanierComponent {
   }
 
 
-  Acheter() {
 
-    this.orderservice.addOrderToOrders(this.productCart);
-   
-    
-    if(this.auth.isAuth){
+  //wait i will fix this !
+  
+  Acheter() {
+    if(this.authService.currentUserSig()){
+      const userConfirmed = confirm("Vous voulez continuer ?");
+      if(userConfirmed){
+         
+      this.orderservice.createCommande( this.productCart,this.calculateTotal());
       this.route.navigateByUrl('/orders');
       this.productCart = [];
       this.panier.removeAllProducts();
+
+      }
+
+     
+
     }
     else{
-      alert("Vous devez d'abord etre connecté");
+
+      alert("Se Conncter D'abord ");
       this.route.navigateByUrl('/signin');
 
     }

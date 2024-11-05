@@ -4,20 +4,20 @@
         <div class="col-md-9">
           <div class="ibox">
             <div class="ibox-title">
-              <span class="pull-right">(<strong>{{ orders.length }}</strong>) orders</span>
+              <span class="pull-right">(<strong>{{ userOrders.length }}</strong>) Mes Commandes : </span>
               <h5>Order History</h5>
             </div>
             <div class="ibox-content">
               <div class="table-responsive">
                 <table class="table shoping-cart-table">
                   <tbody>
-                    <tr *ngFor="let order of orders">
+                    <tr *ngFor="let order of userOrders">
                       <td class="desc">
                         <h3>
-                          <a href="#" class="text-navy">Order {{order.orderid }} </a>
+                          <a href="#" class="text-navy">Order {{order.details.productName }} </a>
                         </h3>
-                        <p class="small">Placed on: {{ order.orderdate}}</p>
-                        <p class="small">Items: {{ order.productCart.length }}</p>
+                        <p class="small">Placed on: {{ order.dateCommande}}</p>
+                        <p class="small">Items: {{ order.details.length }}</p>
                         <div class="m-t-sm">
                           <a class="text-muted"><i class="fa fa-eye"></i> View Details</a>
                         </div>
@@ -28,7 +28,7 @@
                       </td>
                       <td>
                         <span>Total:</span>
-                        <h4>{{ calculateTotal(order) }}</h4>
+                        <h4>{{ order.montant }}</h4>
                       </td>
                       <td width="150">
                         <button class="btn btn-primary btn-sm" style="background-color: #b8fc04; border-width: 0px; border-radius: 6px;">
@@ -57,7 +57,7 @@
             </div>
             <div class="ibox-content">
               <span>Total Orders:</span>
-              <h2 class="font-bold">{{ orders.length }}</h2>
+              <h2 class="font-bold">{{ userOrders.length }}</h2>
               <hr>
               <span class="text-muted small"> Review your order history </span>
               <div class="m-t-sm">

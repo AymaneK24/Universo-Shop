@@ -11,14 +11,13 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
 
 export const routes: Routes = [
 
-    {path : '' , component : HomeComponent},
+    {path : '' ,component : HomeComponent},
     {path : 'products' , component : ListproductsComponent},
     {path : 'panier' , component : PanierComponent},
     {path : 'signup' , component : SignupComponent},
     {path : 'signin' , component : SigninComponent},
     {path : 'orders' , component : MyordersComponent, canActivate : [authGuard]},
     {path : 'product/:id' , component : ProductdetailsComponent},
-   
     {path : '***'  , component : PagenotfoundComponent}
     
 ];

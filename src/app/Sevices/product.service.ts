@@ -13,7 +13,8 @@ export class ProductService {
   private categoriesAPI = 'https://dummyjson.com/products/category-list';
   
   
-  searchResults$ !: Observable<any>;
+
+  searchResults$ !: Observable<any>; 
 
   getProducts(){
     return this.http.get(this.productsAPI);

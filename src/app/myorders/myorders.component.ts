@@ -14,16 +14,21 @@ import { FooterComponent } from "../footer/footer.component";
 })
 export class MyordersComponent implements OnInit{
 
-  orders : Order[] = [];
+  userOrders : any[] = [];
 
-  constructor(private order : OrdersService,private route : Router){}
+  constructor(private orderService : OrdersService,private route : Router){}
 
   ngOnInit(): void {
-      this.order.getAllOrders().subscribe(data => {
-        this.orders = data;
-
-      })
+    this.orderService.getAllOrdersByUserId().subscribe((data: any) => {
+      // Map over the data to convert Timestamp to Date
+      this.userOrders = data.map((order : any) => ({
+        ...order,
+        dateCommande: order.dateCommande ? order.dateCommande.toDate() : null
+      }));
+      console.log("orders:", this.userOrders);
+    });
   }
+  
 
 
   calculateTotal(order : Order): number {

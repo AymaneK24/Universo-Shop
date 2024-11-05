@@ -11,11 +11,9 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" routerLink="/" routerLinkActive="active" >Home</a>
-                </li>
-            
+                </li>          
                 <li class="nav-item">
                     <a class="nav-link" href="#">Prime</a>
-
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Deals</a>
@@ -24,10 +22,7 @@
                     <a class="nav-link" href="#">Customer Service</a>
                 </li>
             </ul>
-
             <div class="d-flex gap-2" role="searchbox">
-
-
                 <div class="categories-dropdown">
                     <select class="dropdown-select" [(ngModel)]="selectedCategory" (ngModelChange)="onCategoryChange()" >
                       <option value=""  >All</option>
@@ -35,51 +30,57 @@
                         {{ category }}
                       </option>
                     </select>
-                </div>
-                  
-
+                </div>              
                 <div class="d-flex" role="search" >
-
                     <input class="dd form-control me-2" type="search" placeholder="Search" aria-label="Search"  (ngModelChange)="onSearch($event)"  [(ngModel)]="searchKey"  >
-                    <button class="btn btn-outline" type="submit"> <i class="panier fa-sharp fa-solid fa-magnifying-glass"> </i> </button>
-                    
+                    <button class="btn btn-outline" type="submit"> <i class="panier fa-sharp fa-solid fa-magnifying-glass"> </i> </button> 
                 </div>
             </div>
-           
             <ul class="navbar-nav  mb-2 mb-lg-0">
-
-
                 @if(authService.currentUserSig()==null){
-
                     <li class="nav-item">
                         <a class="btn btn-outline"  (click)="login()" > Connexion </a>
                     </li>
-
                 }
                 @if(authService.currentUserSig()){
-
                     <li class="nav-item">
                         <a class="btn btn-outline" (click)="logout()" > Deconnexion </a>
                     </li>
-
                 }
-                
-                
-               
-
                 <li class="nav-item">
                     <a class="nav-link"  routerLink="/account" routerLinkActive="active"> Account </a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/orders" routerLinkActive="active">Orders</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link"  routerLink="/panier"  routerLinkActive="active">  <i class="fa-solid fa-cart-shopping"></i>  </a>
                 </li>
-
             </ul>
         </div>
     </div>
 </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

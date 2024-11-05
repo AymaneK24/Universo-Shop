@@ -2,7 +2,7 @@ import {inject, Injectable, signal } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, updateProfile , signInWithEmailAndPassword, user, signOut } from '@angular/fire/auth';
 
 
-import { Observable,from } from 'rxjs';
+import { Observable,from, map } from 'rxjs';
 import { User } from './Modules/User';
 
 
@@ -16,7 +16,11 @@ export class AuthService {
 
   currentUserSig = signal<User | null | undefined>(undefined);
 
-  isAuth = true ;
+  async getUserId(): Promise<string | null> {
+    const user = await this.firebaseauth.currentUser; // Wait for the current user
+    return user ? user.uid : null; // Return the UID if the user exists, otherwise null
+  }
+  
 
   register(email : string, username : string , password : string) :Observable<void>{
     const promis = createUserWithEmailAndPassword(
@@ -35,6 +39,7 @@ export class AuthService {
         password).then(()=>{});
     return from(promis);
   }
+  
 
   logout():Observable<void>{
     const promise = signOut(this.firebaseauth);

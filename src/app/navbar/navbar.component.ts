@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchService } from '../Sevices/search.service';
 import { Router , RouterModule} from '@angular/router';
 import { AuthService } from '../auth.service';
-import { User } from '../Modules/User';
+
 
 
 @Component({
@@ -66,6 +66,8 @@ authService = inject(AuthService);
 
   logout() {
     this.authService.logout();
+    this.router.navigateByUrl('/');
+
   }
 
   login() {
