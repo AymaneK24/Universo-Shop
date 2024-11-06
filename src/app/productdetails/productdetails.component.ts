@@ -16,7 +16,8 @@ export class ProductdetailsComponent implements OnInit {
 
 
 
-  product !: Product; // Use definite assignment assertion
+  product !: Product;
+  reviews! : any[] ;  // Use definite assignment assertion
 
 
   constructor(
@@ -25,15 +26,19 @@ export class ProductdetailsComponent implements OnInit {
     private panier: PanierService
   ) {}
 
+  
+
   ngOnInit(): void {
 
     // Get the product ID from the route parameters and convert it to a number
     const productId = +this.route.snapshot.paramMap.get('id')!; // The exclamation mark is used to assert that the value is not null
     this.productService.getProductById(productId).subscribe((data:any) => {
       this.product =  data;
+      this.reviews = data.reviews;
 
     }
     );
+   
 
   }
 

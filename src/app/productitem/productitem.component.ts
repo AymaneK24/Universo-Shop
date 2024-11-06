@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../Modules/Product';
-import { NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { PanierService } from '../Sevices/panier.service';
 import {  Router} from '@angular/router';
 
@@ -8,7 +8,7 @@ import {  Router} from '@angular/router';
 @Component({
   selector: 'app-productitem',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf,NgClass,NgFor],
   templateUrl: './productitem.component.html',
   styleUrl: './productitem.component.css'
 })

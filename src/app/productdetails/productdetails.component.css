@@ -1,125 +1,108 @@
-body {
-  margin-top: 20px;
-  background: #eee;
-}
-
-.text-navy {
-  color: #1ab394;
-}
-
-.product-details-container {
+/* General Layout */
+.product-detail {
   display: flex;
-  flex-direction: row;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  margin: 20px 0;
-  max-width: 900px;
-  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  color: #000000;
 }
 
-.product-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+.product-main,
+.product-details {
+  flex: 1 1 48%;
+  margin: 10px;
 }
 
 .product-image img {
   max-width: 100%;
-  max-height: 300px;
-  object-fit: contain;
-  display: block;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Product Info */
 .product-info {
-  flex: 2;
-  padding: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-title {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 1.8em;
   color: #000000;
+  margin-bottom: 5px;
 }
 
-.product-category {
-  font-size: 16px;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
+.product-sku,
+.product-category,
+.product-price,
+.product-discount,
+.product-stock,
 .product-description {
-  font-size: 16px;
+  margin: 8px 0;
+  font-size: 1em;
+}
+
+.text-navy {
   color: #000000;
-  margin-bottom: 20px;
-  line-height: 1.6;
 }
 
-.product-price {
-  font-size: 20px;
-  font-weight: bold;
-  color: #000000;
-  margin-bottom: 10px;
+.rating i {
+  color: #b9ff2d; /* Star color */
 }
 
-.product-discount {
-  font-size: 18px;
-  color: #031a0c;
-  margin-bottom: 10px;
-}
-
-.product-rating .fa-star,
-.product-rating .fa-star-o {
-  color: #ffffff;
-}
-
-.product-rating .fa-star {
-  color: #74ff2e;
-}
-
-.product-brand {
-  font-size: 18px;
-  color: #000000;
-  margin-bottom: 10px;
-}
-
-.product-tags {
-  font-size: 16px;
-  color: #000000;
-  margin-bottom: 20px;
-}
-
-.product-tag {
-  background-color: #000000;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 12px;
-  margin-right: 5px;
-  font-size: 14px;
+.rating {
+  display: inline-flex;
+  align-items: center;
 }
 
 .product-stock {
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.out-of-stock {
+  color: #ff1900;
+}
+
+/* Product Details */
+.product-details {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details h2 {
+  font-size: 1.6em;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.product-tag {
+  background-color: transparent;
   color: #ffffff;
-  margin-bottom: 20px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 12px;
+  font-size: 0.9em;
 }
 
-.product-stock.out-of-stock {
-  color: #e74c3c;
-}
-
+/* Button */
 .btn-add-to-cart {
   background-color: #000000;
-  color: white;
-  padding: 10px 20px;
+  color: #fff;
+  padding: 12px 20px;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 1em;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: inline-block;
 }
 
 .btn-add-to-cart:disabled {
@@ -128,15 +111,73 @@ body {
 }
 
 .btn-add-to-cart:hover:not(:disabled) {
-  background-color: #5eff00;
+  background-color: #fffc53;
 }
 
-.cc{
-  margin-top: 0;
-  background: transparent;
-  height: 100vh; 
+
+.product-reviews {
+  margin-top: 20px;
+}
+
+.product-reviews h2 {
+  font-size: 1.6em;
+  color: #000000;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.review-item {
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  margin: 5px 0;
+}
+
+.no-reviews {
+  color: transparent;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.comment {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.comment-header {
   display: flex;
-  justify-content: center;
-  align-items: center; 
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
+.comment-author {
+  font-weight: bold;
+}
+
+.comment-date {
+  color: #888;
+  font-size: 0.8em;
+}
+
+.comment-body {
+  margin-bottom: 10px;
+}
+
+.comment-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-actions button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  cursor: pointer;
+}

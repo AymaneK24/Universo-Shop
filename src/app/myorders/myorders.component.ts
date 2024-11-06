@@ -25,7 +25,7 @@ export class MyordersComponent implements OnInit{
         ...order,
         dateCommande: order.dateCommande ? order.dateCommande.toDate() : null
       }));
-      console.log("orders:", this.userOrders);
+
     });
   }
   

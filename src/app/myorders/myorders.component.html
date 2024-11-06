@@ -14,7 +14,7 @@
                     <tr *ngFor="let order of userOrders">
                       <td class="desc">
                         <h3>
-                          <a href="#" class="text-navy">Order {{order.details.productName }} </a>
+                          <a  class="text-navy">OrderID </a>  <p class="small">{{order.id }} </p>
                         </h3>
                         <p class="small">Placed on: {{ order.dateCommande}}</p>
                         <p class="small">Items: {{ order.details.length }}</p>
@@ -23,8 +23,8 @@
                         </div>
                       </td>
                       <td>
-                        <span>Status:</span>
-                        <h4>Good </h4>
+                        <span> Status:</span>
+                        <h4>Not delivered Yet </h4>
                       </td>
                       <td>
                         <span>Total:</span>

@@ -21,7 +21,7 @@
         <div class="ibox">
           <div class="ibox-title">
             <span class="pull-right">(<strong>{{ productCart.length }}</strong>) item </span>
-            <h5>Items in your cart</h5>
+            <h5>UNIVERSO Carte </h5>
           </div>
           <div class="ibox-content">
             <div class="table-responsive">
@@ -42,12 +42,12 @@
                     
                       <div class="m-t-sm">
                  
-                        <a class="text-muted" (click)="deleteProduct(item.produit)"><i class="fa fa-trash"></i> Remove item</a>
+                        <a class="text-muted btn btn-outline" (click)="deleteProduct(item.produit)"><i class="fa fa-trash"></i> Remove item</a>
                       </div>
                     </td>
                     <td>
                       {{ item.produit.price}}
-                      <s class="small text-muted">{{ item.produit.price - 10}}</s>
+                      <s class="small text-muted">{{ item.produit.price + item.produit.price*32/100}}</s>
                     </td>
                     <td width="65">
                       <input type="number" class="form-control" [(ngModel)]="item.qte" min="1">
@@ -79,7 +79,7 @@
             <span>Total</span>
             <h2 class="font-bold">{{ calculateTotal() }}</h2>
             <hr>
-            <span class="text-muted small"> light weight baby</span>
+            <span class="text-muted small">  </span>
             <div class="m-t-sm">
               <div class="btn-group">
                 <button class="btn btn-primary btn-sm" style="background-color: #b8fc04; border-width: 0px; border-radius: 6px;" (click)="Acheter()"><i class="fa fa-shopping-cart"></i>Acheter </button>

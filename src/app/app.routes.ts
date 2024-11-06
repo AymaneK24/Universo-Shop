@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { MyordersComponent } from './myorders/myorders.component';
 import { authGuard } from './auth.guard';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { AccountComponent } from './account/account.component';
+import { FutureComponent } from './future/future.component';
 
 export const routes: Routes = [
 
@@ -18,6 +20,9 @@ export const routes: Routes = [
     {path : 'signin' , component : SigninComponent},
     {path : 'orders' , component : MyordersComponent, canActivate : [authGuard]},
     {path : 'product/:id' , component : ProductdetailsComponent},
-    {path : '***'  , component : PagenotfoundComponent}
+    {path : '***'  , component : PagenotfoundComponent},
+    {path : 'account' , component : AccountComponent ,  canActivate : [authGuard]},
+    {path : 'future' , component : FutureComponent}
+
     
 ];
