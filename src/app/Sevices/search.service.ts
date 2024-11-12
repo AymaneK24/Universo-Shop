@@ -17,7 +17,7 @@ export class SearchService {
   constructor(private http: HttpClient) {
     // Automatically fetch results when search term or category changes
     combineLatest([this.searchTerm$, this.category$]).pipe(
-      debounceTime(300),  // Debounce to limit API calls
+      debounceTime(400),  // Debounce to limit API calls
       switchMap(([term, category]) => this.searchProducts(term, category)) // Trigger search when term or category changes
     ).subscribe(results => {
       // Do something with the search results, if needed

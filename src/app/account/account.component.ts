@@ -1,11 +1,11 @@
 import { Component, OnInit , inject } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { NgFor } from '@angular/common';
+
 
 @Component({
   selector: 'app-account',
   standalone: true,
-  imports: [NgFor],
+  imports: [],
   templateUrl: './account.component.html',
   styleUrl: './account.component.css'
 })

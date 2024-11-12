@@ -66,9 +66,7 @@ export class PanierService {
     currentCart.forEach(item => {
       this.removeProductFromCart(item.produit);
     });
-  
-    
-    // this.productCartSubject.next([]); // Clears the cart
+    this.productCartSubject.next([]); // Clears the cart
   }
   
  

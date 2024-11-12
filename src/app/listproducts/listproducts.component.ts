@@ -6,7 +6,7 @@ import { SearchService } from '../Sevices/search.service';
 import { Product } from '../Modules/Product';
 import { combineLatest } from 'rxjs';
 import { FooterComponent } from "../footer/footer.component";
-import { Route, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-listproducts',

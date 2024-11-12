@@ -49,8 +49,10 @@ export class PanierComponent {
 
   
  cancel() {
-  this.productCart = [];
+  
+    this.panier.removeAllProducts();
   }
+  
 
 
 

@@ -8,7 +8,7 @@
       <i class="fa" style="color: rgb(240, 255, 71);" *ngFor="let star of [1,2,3,4,5]" 
            [ngClass]="{'fa-star': star <= product.rating, 'fa-star-o': star > product.rating }"></i>
       <p class="card-text">Price: {{ product.price }} USD</p>
-      <p class="card-text">{{ product.description}}</p>
+      
     </div>
 
     <div class="card-footer">

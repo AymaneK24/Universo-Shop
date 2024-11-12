@@ -1,4 +1,4 @@
-import {  NgFor, NgIf } from '@angular/common';
+import {  NgFor } from '@angular/common';
 import { Component, OnInit,inject } from '@angular/core';
 import { ProductService } from '../Sevices/product.service';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +11,7 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgFor,NgIf,FormsModule, RouterModule],
+  imports: [NgFor,FormsModule, RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -45,6 +45,7 @@ authService = inject(AuthService);
       }
       console.log(this.authService.currentUserSig());
      }
+     
     )
 
     
