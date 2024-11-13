@@ -47,9 +47,10 @@ export class PanierComponent {
     );
   }
 
+
+  
   
  cancel() {
-  
     this.panier.removeAllProducts();
   }
   
