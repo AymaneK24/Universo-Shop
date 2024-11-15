@@ -17,13 +17,13 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBRSAjljFn3J_Lpk_CD10_a3tb2tYz4kQw",
+  apiKey: "***********************************",
   authDomain: "shopforemi.firebaseapp.com",
   projectId: "shopforemi",
   storageBucket: "shopforemi.firebasestorage.app",
-  messagingSenderId: "181782064973",
-  appId: "1:181782064973:web:0193f057d46b9b38a99104",
-  measurementId: "G-YFRW93XMFZ"
+  messagingSenderId: "***********",
+  appId: "********************",
+  measurementId: "*-***********"
 };
 
 
